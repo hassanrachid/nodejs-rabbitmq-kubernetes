@@ -1,0 +1,14 @@
+apiVersion: skaffold/v1
+kind: Config
+metadata:
+  name: api
+build:
+  artifacts:
+  - image: unity-exam
+    context: .
+  local:
+    push: false
+deploy:
+  kubectl:
+    manifests:
+    - kubernetes/app-deployment.yml
